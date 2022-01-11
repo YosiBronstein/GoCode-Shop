@@ -278,14 +278,14 @@ function App() {
   
   
    
-  function Change1(category) {
+  function filter(category) {
     setProducts( products.filter((product) => product.category === category));
     
   }
 
   return (
     <div className="App">
-      <Header categories={categories} Change1={Change1} />
+      <Header categories={categories} filter={filter} />
       <Products products={products} />
     </div>
   );

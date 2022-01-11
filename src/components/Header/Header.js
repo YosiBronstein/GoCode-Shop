@@ -4,7 +4,7 @@ import "./Header.css";
 
 let selectedCategory = "";
 
-export default function Header({ categories, onChange }) {
+export default function Header({ categories, filter }) {
   return (
     <nav className="product-filter">
       <h1>Go Code Shop</h1>
@@ -12,12 +12,7 @@ export default function Header({ categories, onChange }) {
       <div className="sort">
         <div className="collection-sort">
           <label>Filter by:</label>
-          <select
-            onChange={() =>
-              onChange((e) => (selectedCategory = e.target.value))
-              
-            }
-          >
+          <select onChange={(e) => filter(e.target.value)}>
             <option selected="selected" disabled="disabled">
               choose a category
             </option>
